@@ -16,14 +16,15 @@ public class A1Novice {
 			System.out.print(fname.charAt(0) + ". " );
 			System.out.print(lname + ": ");
 			int items = scan.nextInt();
-			double total = 0.0;
+			double value = 0.00;
 			for ( int c=0; c < items; c++) {
-				double count = scan.nextDouble();
+				int count = scan.nextInt();
 				String type = scan.next();
 				double price = count * scan.nextDouble();
-				total = total + price;
+				value = value + price;
+				String.format("%.2f", value);
 			}
-			System.out.println(total);
+			System.out.println(value);
 		}
 		
 	}
