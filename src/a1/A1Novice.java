@@ -24,7 +24,7 @@ public class A1Novice {
 				value = value + price;
 				String.format("%.2f", value);
 			}
-			System.out.println(value);
+			System.out.printf("%.2f", value);
 		}
 		
 	}
