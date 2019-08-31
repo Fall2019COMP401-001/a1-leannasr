@@ -13,18 +13,17 @@ public class A1Novice {
 		for ( int i = 0; i < customers; i++) {
 			String fname = scan.next();
 			String lname = scan.next();
-			System.out.println(fname.charAt(0) + ". " );
-			System.out.println(lname);
+			System.out.print(fname.charAt(0) + ". " );
+			System.out.print(lname);
 			int items = scan.nextInt();
 			double total = 0;
-			for ( int c = 0; c < items; i++) {
+			for ( int c = 0; c < items; c++) {
 				int count = scan.nextInt();
 				String type = scan.next();
 				double price = count * scan.nextDouble();
 				total = total + price;
 			}
-			System.out.println(total);
 		}
 		
 	}
-};
+}
