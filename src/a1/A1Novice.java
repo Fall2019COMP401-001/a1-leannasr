@@ -14,7 +14,7 @@ public class A1Novice {
 			String fname = scan.next();
 			String lname = scan.next();
 			System.out.print(fname.charAt(0) + ". " );
-			System.out.print(lname);
+			System.out.print(lname + ": ");
 			int items = scan.nextInt();
 			double total = 0;
 			for ( int c = 0; c < items; c++) {
@@ -23,6 +23,7 @@ public class A1Novice {
 				double price = count * scan.nextDouble();
 				total = total + price;
 			}
+			System.out.print(total);
 		}
 		
 	}
