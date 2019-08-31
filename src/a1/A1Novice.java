@@ -23,7 +23,8 @@ public class A1Novice {
 				double price = count * scan.nextDouble();
 				total = total + price;
 			}
+			System.out.println(total);
 		}
 		
 	}
-}
+};
