@@ -22,8 +22,8 @@ public class A1Novice {
 				String type = scan.next();
 				double price = count * scan.nextDouble();
 				value = value + price;
-				String.format("%.2f", value);
 			}
+			String.format("%.2f", value);
 			System.out.println(value);
 		}
 		
