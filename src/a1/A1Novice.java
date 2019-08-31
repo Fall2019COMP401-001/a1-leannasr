@@ -17,7 +17,7 @@ public class A1Novice {
 			System.out.print(lname + ": ");
 			int items = scan.nextInt();
 			double total = 0.0;
-			for ( int c = 0; c < items; c++) {
+			for ( int c=0; c < items; c++) {
 				double count = scan.nextDouble();
 				String type = scan.next();
 				double price = count * scan.nextDouble();
