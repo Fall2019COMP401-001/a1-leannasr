@@ -1,5 +1,6 @@
 package a1;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class A1Novice {
@@ -21,10 +22,10 @@ public class A1Novice {
 				int count = scan.nextInt();
 				String type = scan.next();
 				double price = count * scan.nextDouble();
-				value = value + price;
+				value = value + price; 
 			}
-			String.format("%.2f", value);
-			System.out.println(value);
+			DecimalFormat df = new DecimalFormat("0.00");
+			System.out.println(df.format(value));
 		}
 		
 	}
