@@ -18,7 +18,7 @@ public class A1Novice {
 			int items = scan.nextInt();
 			double total = 0.0;
 			for ( int c = 0; c < items; c++) {
-				int count = scan.nextInt();
+				double count = scan.nextDouble();
 				String type = scan.next();
 				double price = count * scan.nextDouble();
 				total = total + price;
