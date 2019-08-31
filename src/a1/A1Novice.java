@@ -16,7 +16,7 @@ public class A1Novice {
 			System.out.print(fname.charAt(0) + ". " );
 			System.out.print(lname + ": ");
 			int items = scan.nextInt();
-			double value = 0.00;
+			double value = 0;
 			for ( int c=0; c < items; c++) {
 				int count = scan.nextInt();
 				String type = scan.next();
@@ -24,7 +24,7 @@ public class A1Novice {
 				value = value + price;
 				String.format("%.2f", value);
 			}
-			System.out.printf("%.2f", value);
+			System.out.println(value);
 		}
 		
 	}
