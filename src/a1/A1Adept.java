@@ -5,11 +5,9 @@ import java.util.Scanner;
 
 public class A1Adept {
 
-	private static Scanner scan;
-
 	public static void main(String[] args) {
 		
-		scan = new Scanner(System.in);
+		Scanner scan = new Scanner(System.in);
 		// Your code follows here.
 		class Stock {
 			String name = scan.next();
@@ -39,7 +37,7 @@ public class A1Adept {
 		int q = scan.nextInt();
 		String name = scan.next();
 		for (int x = 0; x < items.length; x++) {
-			if (Objects.deepEquals(name,  items[x].name)) {
+			if (Objects.equals(name,  items[x].name)) {
 				customers[z].total = total + q*items[x].price;
 			}
 		}
