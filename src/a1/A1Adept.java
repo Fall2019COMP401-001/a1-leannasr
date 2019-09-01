@@ -5,10 +5,11 @@ import java.util.Scanner;
 
 public class A1Adept {
 
-	@SuppressWarnings("resource")
+	private static Scanner scan;
+
 	public static void main(String[] args) {
 		
-		Scanner scan = new Scanner(System.in);
+		scan = new Scanner(System.in);
 		// Your code follows here.
 		class Stock {
 			String name = scan.next();
@@ -70,4 +71,3 @@ public class A1Adept {
 
 	}
 }
-
