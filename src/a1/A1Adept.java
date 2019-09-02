@@ -51,8 +51,8 @@ public class A1Adept {
 			biggest = "Biggest: " + fname[fname.length - 1] + " " + lname[lname.length - 1] + " (" + compare + ")" ;
 		}
 	}
-	String.format("%.2f", biggest);
-	System.out.println(biggest);
+	System.out.println(String.format("%.2f", biggest));
+
 	
 	double compare2 = totals[totals.length - 1];
 	for (int r = 0; r < totals.length; r++) {
@@ -63,16 +63,14 @@ public class A1Adept {
 			smallest = "Smallest: " + fname[fname.length - 1] + " " + lname[lname.length - 1] + " (" + compare2 + ")";
 		}
 	}
-	String.format("%.2f", smallest);
-	System.out.println(smallest);
+	System.out.println(String.format("%.2f", smallest));
 	
 	double bigTotal = 0;
 	for ( int d = 0; d < totals.length; d++) {
 		bigTotal = bigTotal + totals[d];
 	}
 	String average = "Average: " + bigTotal/customers; 
-	String.format("%.2f", average);
-	System.out.println(average);
+	System.out.println(String.format("%.2f", average));
 	}
 	
 };
