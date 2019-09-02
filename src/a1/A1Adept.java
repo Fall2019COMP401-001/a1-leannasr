@@ -63,15 +63,16 @@ public class A1Adept {
 			smallest = "Smallest: " + fname[fname.length - 1] + " " + lname[lname.length - 1] + " (" + compare2 + ")";
 		}
 	}
-	
-	System.out.println(df.format(smallest));
+	DecimalFormat tf = new DecimalFormat("0.00");
+	System.out.println(tf.format(smallest));
 	
 	double bigTotal = 0;
 	for ( int d = 0; d < totals.length; d++) {
 		bigTotal = bigTotal + totals[d];
 	}
 	String average = "Average: " + bigTotal/customers; 
-	System.out.println(df.format(average));
+	DecimalFormat yf = new DecimalFormat("0.00");
+	System.out.println(yf.format(average));
 	}
 	
 };
