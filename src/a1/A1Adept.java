@@ -1,71 +1,74 @@
 package a1;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 public class A1Adept {
 
 	public static void main(String[] args) {
 		
+		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
-		// Your code follows here.
-		class Stock {
-			String name = scan.next();
-			double price = scan.nextDouble();
+		int stock = scan.nextInt();
+		String[] itemNames = new String[stock];
+		double[] itemPrices = new double[stock];
+		for (int i = 0; i < stock; i++) {
+			itemNames[i] = scan.next();
+			itemPrices[i] = scan.nextDouble();
 		}
 		
-		class Customer {
-			String fname = scan.next();
-			String lname = scan.next();
-			int items = scan.nextInt();
-			double total = 0;
-		}
-		
-	int stock = scan.nextInt();
-	Stock[] items = new Stock[stock];
-	for (int i = 0; i < stock; i++) {
-		items[i] = new Stock();
-	}
-	int people = scan.nextInt();
-	Customer[] customers = new Customer[people];
-	for (int c = 0; c < people; c++) {
-		customers[c] = new Customer();
-	}
-	
-	for (int z = 0; z < customers[z].items; z++) {
-		double total = 0.00;
-		int q = scan.nextInt();
-		String name = scan.next();
-		for (int x = 0; x < items.length; x++) {
-			if (Objects.equals(name,  items[x].name)) {
-				customers[z].total = total + q*items[x].price;
+		int customers = scan.nextInt();
+		String[] fname = new String[customers];
+		String[] lname = new String[customers];
+		int[] itemsBought = new int[customers];
+		double[] totals = new double[customers];
+		for (int x = 0; x < customers; x++) {
+			fname[x] = scan.next();
+			lname[x] = scan.next();
+			itemsBought[x] = scan.nextInt();
+			double total = 0.00;
+			
+			for (int y = 0; y < itemsBought[x]; y++) {
+				int quantity = scan.nextInt();
+				String item = scan.next();
+				
+				for (int z = 0; z < itemNames.length; z++) {
+					if ( item.equals(itemNames[z])) {
+						total = total + quantity*itemPrices[z];
+					}
+				}
 			}
+			totals[x] = total;
 		}
-	}
-	double compare = customers[customers.length - 1].total;
+	double compare = totals[totals.length - 1];
 	String biggest = "";
-	for (int y = 0; y < customers.length; y++) {
-		if (compare < customers[y].total) {
-			compare = customers[y].total;
-			biggest = customers[y].fname + " " + customers[y].lname + " (" + customers[y].total + ")";
-		}
-	}
-	double compare2 = customers[customers.length - 1].total;
 	String smallest = "";
-	for (int s = 0; s < customers.length; s++) {
-		if (customers[s].total < compare2) {
-			compare2 = customers[s].total;
-			smallest = customers[s].fname + " " + customers[s].lname + " (" + customers[s].total + ")";
+	for (int c = 0; c < totals.length; c++) {
+		if ( totals[c] > compare) {
+			compare = totals[c];
+			biggest = "Biggest: " + fname[c] + " " + lname[c];
+		} else {
+			biggest = "Biggest: " + fname[fname.length - 1] + " " + lname[lname.length - 1];
 		}
 	}
-	double tot = 0.00;
-	for (int a = 0; a < customers.length; a++) {
-		tot = tot + customers[a].total;
+	System.out.println(biggest);
+	
+	double compare2 = totals[totals.length - 1];
+	for (int r = 0; r < totals.length; r++) {
+		if (totals[r] < compare2) {
+			compare2 = totals[r];
+			smallest = "Smallest: " + fname[r] + " " + lname[r];
+		} else {
+			smallest = "Smallest: " + fname[fname.length - 1] + " " + lname[lname.length - 1];
+		}
 	}
 	
-	System.out.println("Biggest: " + biggest);
-	System.out.println("Smallest: " + smallest);
-	System.out.println("Average: " + tot/people);
-
+	System.out.println(smallest);
+	double bigTotal = 0;
+	for ( int d = 0; d < totals.length; d++) {
+		bigTotal = bigTotal + totals[d];
 	}
-}
+	String average = "Average: " + bigTotal/customers; 
+	System.out.println(average);
+	}
+	
+};
