@@ -1,5 +1,6 @@
 package a1;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class A1Adept {
@@ -45,30 +46,32 @@ public class A1Adept {
 	for (int c = 0; c < totals.length; c++) {
 		if ( totals[c] > compare) {
 			compare = totals[c];
-			biggest = "Biggest: " + fname[c] + " " + lname[c];
+			biggest = "Biggest: " + fname[c] + " " + lname[c] + " (" + compare + ")";
 		} else {
-			biggest = "Biggest: " + fname[fname.length - 1] + " " + lname[lname.length - 1];
+			biggest = "Biggest: " + fname[fname.length - 1] + " " + lname[lname.length - 1] + " (" + compare + ")" ;
 		}
 	}
-	System.out.println(biggest);
+	DecimalFormat df = new DecimalFormat("0.00");
+	System.out.println(df.format(biggest));
 	
 	double compare2 = totals[totals.length - 1];
 	for (int r = 0; r < totals.length; r++) {
 		if (totals[r] < compare2) {
 			compare2 = totals[r];
-			smallest = "Smallest: " + fname[r] + " " + lname[r];
+			smallest = "Smallest: " + fname[r] + " " + lname[r] + " (" + compare2 + ")";
 		} else {
-			smallest = "Smallest: " + fname[fname.length - 1] + " " + lname[lname.length - 1];
+			smallest = "Smallest: " + fname[fname.length - 1] + " " + lname[lname.length - 1] + " (" + compare2 + ")";
 		}
 	}
 	
-	System.out.println(smallest);
+	System.out.println(df.format(smallest));
+	
 	double bigTotal = 0;
 	for ( int d = 0; d < totals.length; d++) {
 		bigTotal = bigTotal + totals[d];
 	}
 	String average = "Average: " + bigTotal/customers; 
-	System.out.println(average);
+	System.out.println(df.format(average));
 	}
 	
 };
