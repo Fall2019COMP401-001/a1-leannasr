@@ -41,36 +41,48 @@ public class A1Adept {
 			totals[x] = total;
 		}
 	double compare = totals[totals.length - 1];
-	String biggest = "";
-	String smallest = "";
+	double biggest = 0;
+	double smallest = 0;
+	String firstName = "";
+	String lastName = "";
 	for (int c = 0; c < totals.length; c++) {
 		if ( totals[c] > compare) {
 			compare = totals[c];
-			biggest = "Biggest: " + fname[c] + " " + lname[c] + " (" + compare + ")";
+			biggest = totals[c];
+			firstName = fname[c];
+			lastName = lname[c];
 		} else {
-			biggest = "Biggest: " + fname[fname.length - 1] + " " + lname[lname.length - 1] + " (" + compare + ")" ;
+			biggest = compare;
+			firstName = fname[fname.length - 1];
+			lastName = lname[lname.length - 1];
 		}
 	}
-	System.out.println(String.format("%.2f", biggest));
-
+	String.format("%.2f", biggest);
+	System.out.println("Biggest: " + firstName + " " + lastName + " (" + biggest + ")");
 	
 	double compare2 = totals[totals.length - 1];
 	for (int r = 0; r < totals.length; r++) {
 		if (totals[r] < compare2) {
 			compare2 = totals[r];
-			smallest = "Smallest: " + fname[r] + " " + lname[r] + " (" + compare2 + ")";
+			smallest = totals[r];
+			firstName = fname[r];
+			lastName = lname[r];
 		} else {
-			smallest = "Smallest: " + fname[fname.length - 1] + " " + lname[lname.length - 1] + " (" + compare2 + ")";
+			smallest = compare2;
+			firstName = fname[fname.length - 1];
+			lastName = lname[lname.length - 1];
 		}
 	}
-	System.out.println(String.format("%.2f", smallest));
+	String.format("%.2f", smallest);
+	System.out.println(("Smallest: " + firstName + " " + lastName + " (" + smallest + ")" ));
 	
 	double bigTotal = 0;
 	for ( int d = 0; d < totals.length; d++) {
 		bigTotal = bigTotal + totals[d];
 	}
-	String average = "Average: " + bigTotal/customers; 
-	System.out.println(String.format("%.2f", average));
+	double average = bigTotal/customers; 
+	String.format("%.2f", average);
+	System.out.println("Average: " + average);
 	}
 	
 };
