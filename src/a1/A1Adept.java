@@ -1,13 +1,13 @@
 package a1;
 
 import java.text.DecimalFormat;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class A1Adept {
 
 	public static void main(String[] args) {
 		
-		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		int stock = scan.nextInt();
 		String[] itemNames = new String[stock];
@@ -40,11 +40,12 @@ public class A1Adept {
 			}
 			totals[x] = total;
 		}
+		
 	double compare = totals[totals.length - 1];
 	double biggest = 0;
 	double smallest = 0;
-	String firstName = "";
-	String lastName = "";
+	String firstName = fname[fname.length - 1];
+	String lastName = lname[lname.length - 1];
 	for (int c = 0; c < totals.length; c++) {
 		if ( totals[c] > compare) {
 			compare = totals[c];
@@ -53,12 +54,10 @@ public class A1Adept {
 			lastName = lname[c];
 		} else {
 			biggest = compare;
-			firstName = fname[fname.length - 1];
-			lastName = lname[lname.length - 1];
 		}
 	}
-	String.format("%.2f", biggest);
-	System.out.println("Biggest: " + firstName + " " + lastName + " (" + biggest + ")");
+	
+	System.out.println("Biggest: " + firstName + " " + lastName + " (" + String.format("%.2f", biggest) + ")");
 	
 	double compare2 = totals[totals.length - 1];
 	for (int r = 0; r < totals.length; r++) {
@@ -69,20 +68,18 @@ public class A1Adept {
 			lastName = lname[r];
 		} else {
 			smallest = compare2;
-			firstName = fname[fname.length - 1];
-			lastName = lname[lname.length - 1];
 		}
 	}
-	String.format("%.2f", smallest);
-	System.out.println(("Smallest: " + firstName + " " + lastName + " (" + smallest + ")" ));
+
+	System.out.println(("Smallest: " + firstName + " " + lastName + " (" + String.format("%.2f", smallest) + ")" ));
 	
 	double bigTotal = 0;
 	for ( int d = 0; d < totals.length; d++) {
 		bigTotal = bigTotal + totals[d];
 	}
 	double average = bigTotal/customers; 
-	String.format("%.2f", average);
-	System.out.println("Average: " + average);
+	
+	System.out.println("Average: " + String.format("%.2f", average));
 	}
 	
 };
