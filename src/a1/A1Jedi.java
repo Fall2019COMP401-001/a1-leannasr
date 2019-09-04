@@ -8,8 +8,8 @@ public class A1Jedi {
 		
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
-
-		// Your code follows here.
+// Code
+		
 		int stock = scan.nextInt();
 		String[] itemNames = new String[stock];
 		double[] itemPrices = new double[stock];
@@ -37,22 +37,25 @@ public class A1Jedi {
 			fname[x] = scan.next();
 			lname[x] = scan.next();
 			itemsBought[x] = scan.nextInt();
+			
 			int[] repeatCheck = new int[stock];
 			for (int q = 0; q < stock; q++) {
 				repeatCheck[q] = 0;
 			}
 			
 			for (int y = 0; y < itemsBought[x]; y++) {
+				
 				int quantity = scan.nextInt();
 				String item = scan.next();
 				if (quantity > 0) {
 				for ( int z = 0; z < stock; z++) {
 					if (item.equals(itemNames[z])) {
 						totalQuantities[z] = totalQuantities[z] + quantity;
-					} if (repeatCheck[z] == 0) {
-						peopleBought[z] = peopleBought[z] + 1;
-						repeatCheck[z] = repeatCheck[z] +1;
-					}
+						if (repeatCheck[z] == 0) {
+							peopleBought[z] = peopleBought[z] + 1;
+							repeatCheck[z] = repeatCheck[z] + 1;
+						}
+					} 
 					}
 				}
 				}
@@ -61,7 +64,7 @@ public class A1Jedi {
 			if (totalQuantities[w] == 0) {
 				System.out.println("No customers bought " + itemNames[w]);
 	} else {
-		System.out.println(peopleBought[w] + " " + "customers bought" + itemNames[w]);
+		System.out.println(peopleBought[w] + " " + "customers bought " + totalQuantities[w] + " " + itemNames[w]);
 	}
 			
 		}
